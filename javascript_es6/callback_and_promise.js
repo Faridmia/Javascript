@@ -36,11 +36,31 @@ const postListPromise = new Promise(( resolve,reject ) => {
     })
 })
 
-postListPromise.then((response) => {
-    console.log("call success");
-    console.log("Then response => ", response );
-}).catch((error) => {
+
+const postDetailsPromise = (data) => new Promise(( resolve,reject ) => {
+    $.get(`https://jsonplaceholder.typicode.com/posts/${data[0].id}`, ( data ) => {
+        resolve(data);
+    }).fail( err => {
+        reject(`Details call failed and status ${err.status}`);
+
+        // reject(new Error(`Details call failed and status ${err.status}`));
+    })
+})
+
+// postListPromise.then((response) => {
+//     console.log("call success");
+//     console.log("Then response => ", response );
+// }).catch((error) => {
+//     console.log("call failed");
+//     console.log('catch error => ', error );
+// })
+
+
+postListPromise.then( postDetailsPromise)
+.then((response) => {
+    console.log('post details response =>', response );
+})
+.catch((error) => {
     console.log("call failed");
     console.log('catch error => ', error );
 })
-
