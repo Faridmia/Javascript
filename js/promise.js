@@ -18,11 +18,23 @@
 //     function(error) { myDisplayer(error);},
 // );
 
-function myFunction(value) {
-    document.getElementById("demo").innerHTML = value;
-}
+// function myFunction(value) {
+//     document.getElementById("demo").innerHTML = value;
+// }
 
-setTimeout(function() {
-    myFunction("time funciton data call");
+// setTimeout(function() {
+//     myFunction("time funciton data call");
 
-},3000);
+// },3000);
+
+const myPromise = new Promise(function( myResolve,myReject ) {
+    setTimeout(function () {
+        myResolve("promise function call");   
+    }, 3000 );
+});
+
+myPromise.then(
+    function( value ) {
+        document.getElementById("demo").innerHTML = value;
+    }
+);
