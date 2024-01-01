@@ -40,6 +40,7 @@
     </script>
 
     <p id="demo5"></p>
+    <p id="demo6"></p>
 
     <script>
       const fruits = ["Banana", "Orange", "Apple", "Mango"];
@@ -52,6 +53,14 @@
       text += "</ul>";
 
       document.getElementById("demo5").innerHTML = text;
+      let text2 = "<ul>";
+      fruits.forEach(function(value) {
+            text2 += "<li>" + value + "</li>";
+      })
+
+      text2 += "</ul>";
+
+      document.getElementById("demo6").innerHTML = text2;
     </script>
   </body>
 </html>
