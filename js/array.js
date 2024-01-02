@@ -27,3 +27,9 @@ for (let m = 0;m<flength;m++) {
 text3 += '</ul>';
 
 document.getElementById("demo9").innerHTML = text3;
+
+
+const fruits6 = ["Banana", "Orange", "Apple3", "Mango"];
+let fruit6 = fruits6.at(2);
+
+console.log(fruit6);
