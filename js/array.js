@@ -33,3 +33,28 @@ const fruits6 = ["Banana", "Orange", "Apple3", "Mango"];
 let fruit6 = fruits6.at(2);
 
 console.log(fruit6);
+
+const fruits7 = ["Banana", "Orange", "Apple", "Mango"];
+
+let data = fruits7.join(" * ");
+
+console.log(data);
+
+const fruits8 = ["Banana", "Orange", "Apple", "Mango"];
+
+fruits8.unshift("Lemon");
+
+console.log(fruits8);
+
+
+const fruits9 = ["Banana", "Orange", "Apple", "Mango"];
+fruits9[fruits9.length] = "Kiwi";
+
+console.log(fruits9);
+
+const myGirls = ["Cecilie", "Lone"];
+const myBoys = ["Emil", "Tobias", "Linus"];
+
+const myChildren = myGirls.concat(myBoys);
+
+console.log(myChildren);
