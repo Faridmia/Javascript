@@ -58,3 +58,18 @@ const myBoys = ["Emil", "Tobias", "Linus"];
 const myChildren = myGirls.concat(myBoys);
 
 console.log(myChildren);
+
+const arr1 = ["Cecilie", "Lone"];
+const arr2 = ["Emil", "Tobias", "Linus"];
+const arr3 = ["Robin", "Morgan"];
+
+let three_element = arr1.concat( arr2, arr3 );
+
+console.log(three_element);
+
+const fruits10 = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits10);
+
+fruits10.splice(2, 0, "Lemon", "Kiwi"); 
+
+console.log(fruits10);
