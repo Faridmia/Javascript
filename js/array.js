@@ -81,3 +81,23 @@ const fruits11 = ["Apple", "Orange", "Apple", "Mango"];
 let position = fruits11.indexOf("Apple") + 1;
 
 console.log(position);
+
+
+const fruits12 = ["Apple", "Orange", "Apple", "Mango"];
+let position2 = fruits12.lastIndexOf("Apple") + 1;
+
+console.log(position2);
+
+
+const fruits14 = ["Banana", "Orange", "Apple", "Mango"];
+
+fruits14.includes("Mango"); // is true
+
+const numbers = [4, 9, 16, 25, 29];
+let first = numbers.find(myFunction);
+
+function myFunction(value,index,array ) {
+    return value > 18;
+}
+
+console.log(first);
