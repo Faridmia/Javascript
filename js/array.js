@@ -73,3 +73,11 @@ console.log(fruits10);
 fruits10.splice(2, 0, "Lemon", "Kiwi"); 
 
 console.log(fruits10);
+
+
+// array indexof
+
+const fruits11 = ["Apple", "Orange", "Apple", "Mango"];
+let position = fruits11.indexOf("Apple") + 1;
+
+console.log(position);
