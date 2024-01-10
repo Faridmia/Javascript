@@ -42,3 +42,11 @@ function myFunction(total,value,index,array) {
     return total + value;
 }
 console.log(sum);
+
+const numbers6 = [45, 4, 9, 16, 25];
+let sum2 = numbers6.reduce(myFunction4, 100);
+
+function myFunction4(total, value) {
+  return total + value;
+}
+console.log(sum2);
