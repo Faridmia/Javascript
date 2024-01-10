@@ -50,3 +50,23 @@ function myFunction4(total, value) {
   return total + value;
 }
 console.log(sum2);
+
+
+const fruits4 = ["Banana", "Orange", "Apple", "Mango"];
+const keys = fruits4.keys();
+
+for( let x of keys ) {
+    txt += x + "\n";
+}
+
+console.log(txt);
+
+
+const fruits5 = ["Banana", "Orange", "Apple", "Mango"];
+const f = fruits5.entries();
+
+for (let y of f ) {
+  txxt = y + "\n";
+  console.log(txxt);
+}
+
