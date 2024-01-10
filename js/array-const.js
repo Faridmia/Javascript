@@ -5,3 +5,9 @@ try {
   catch (err) {
     console.log(err);
   }
+
+cars = ["Saab", "Volvo", "BMW"];
+var cars;
+
+console.log(cars);
+
