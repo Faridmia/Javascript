@@ -32,3 +32,13 @@ function myFunction2(value,index,array) {
 }
 
 console.log(over18);
+
+
+const numbers4 = [45, 4, 9, 16, 25];
+let sum = numbers4.reduce(myFunction);
+
+
+function myFunction(total,value,index,array) {
+    return total + value;
+}
+console.log(sum);
