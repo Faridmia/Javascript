@@ -70,3 +70,7 @@ for (let y of f ) {
   console.log(txxt);
 }
 
+const months = ["Januar", "Februar", "Mar", "April"];
+const myMonths = months.with(2, "March");
+
+console.log(myMonths);
