@@ -7,3 +7,19 @@ numbers.forEach(function(value, index, array) {
 });
 
 console.log(txt);
+
+
+const numbers1 = [45, 4, 9, 16, 25];
+
+const number2 = numbers1.map(myFunction);
+
+function myFunction(value, index, array ) {
+    return value * 2;
+}
+
+console.log(number2);
+
+const myArr = [1, 2, 3, 4, 5,6];
+const newArray = myArr.flatMap( (x) => x * 2 );
+
+console.log(newArray);
