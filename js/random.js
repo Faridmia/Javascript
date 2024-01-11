@@ -32,3 +32,48 @@ function myArrayMax(arr) {
 
 console.log( myArrayMin(points3));
 console.log( myArrayMax(points3));
+
+const points4 = [40, 100, 1, 5, 25, 10];
+// function myArrayMin2(arr) {
+//     let len = arr.length;
+//     let min = Infinity;
+//     while (len--) {
+//       if (arr[len] < min) {
+//         min = arr[len];
+//       }
+//     }
+//     return min;
+// }
+
+
+function myArrayMin2(value) {
+    let length = value.length;
+
+    let min = Infinity;
+
+    while( length--) {
+        if(value[length] < min ) {
+            min = value[length];
+        }
+    }
+
+    return min;
+}
+
+
+function myArrayMax2(arr) {
+    let len = arr.length;
+
+    let max = -Infinity;
+
+    while(len--) {
+        if(arr[len] > max ) {
+            max = arr[len];
+        }
+    }
+
+    return max;
+}
+
+console.log(myArrayMin2(points4));
+console.log(myArrayMax2(points4));
