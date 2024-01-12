@@ -14,3 +14,9 @@ let text22 = "missing";
 let result = name ?? text22;
 
 console.log(result);
+
+const carmodel = {type:"Fiat", model:"500", color:"white"};
+
+let car22 = carmodel?.model;
+
+console.log(car22);
