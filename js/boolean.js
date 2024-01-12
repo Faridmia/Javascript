@@ -8,3 +8,9 @@ console.log(z1);
 let booldata = "2" > "12";
 
 console.log(booldata);
+
+let name = null;
+let text22 = "missing";
+let result = name ?? text22;
+
+console.log(result);
