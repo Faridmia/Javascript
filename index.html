@@ -13,6 +13,9 @@
     <p id="demo2"></p>
     <p id="demo8"></p>
     <p id="demo9"></p>
+    <input id="age" value="18" />
+
+
     <button onclick="myFunction()">try it</button>
 
     <script src="js/boolean.js" type="text/javascript"></script>
@@ -63,6 +66,13 @@
       })
 
       text2 += "</ul>";
+
+      function myFunction() {
+        let age = document.querySelector("#age").value;
+        let voteable = (age < 18) ? "you young" :  "you old";
+        console.log(voteable);
+      }
+      
 
     </script>
   </body>
