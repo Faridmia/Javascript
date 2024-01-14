@@ -25,3 +25,16 @@ fruits2.forEach(function(value,key) {
 });
 
 console.log(text2);
+
+const fruits3 = new Map([
+    ["apples" , 500],
+    ["bananas", 300],
+    ["oranges", 200]
+]);
+
+text = "";
+for(let x of fruits3) {
+    text +=  x + "\n";
+}
+
+console.log(text);
