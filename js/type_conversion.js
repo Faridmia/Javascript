@@ -40,3 +40,11 @@ let undi = undefined;
 
 // console.log(Number(undi));
 console.log(String(undi));
+
+myFunction();
+// code here can use carName as a global variable
+console.log("I can display " + carName);
+
+function myFunction() {
+  carName = "Volvo";
+}
