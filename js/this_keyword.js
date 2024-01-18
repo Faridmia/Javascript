@@ -22,3 +22,21 @@ const person1 = {
 }
 
 console.log(person1.fullName.call(person2));
+
+const person3 = {
+    firstName:"John",
+    lastName: "Doe",
+    fullName: function () {
+      return this.firstName + " " + this.lastName;
+    }
+  }
+  
+  const member = {
+    firstName:"farid",
+    lastName: "mia",
+  }
+
+  let fullName = person3.fullName.bind(member);
+
+  console.log(fullName());
+  
