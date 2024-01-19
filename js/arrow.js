@@ -3,3 +3,8 @@ hello = () => {
 }
 
 console.log(hello());
+
+let parameter = "";
+parameter = (value) => "Hello " + value;
+
+console.log(parameter("universal"));
