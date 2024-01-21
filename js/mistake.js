@@ -23,3 +23,8 @@ let y1 = 0.2;
 let z = ( x1 * 10 + y1 * 10) / 10;
 
 console.log(z);
+
+let x3 = "Hello \
+World!";
+
+console.log(x3);
