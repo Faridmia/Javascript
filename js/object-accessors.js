@@ -25,3 +25,28 @@ person2.lang = "Bn";
 
 console.log(person2.language);
 
+
+// const person3 = {
+//     firstName: "John",
+//     lastName: "Doe",
+//     language: ""
+    
+// };
+
+// Object.defineProperty ( person3 , "fullName" ,{
+//     get: function () {
+//         return this.language;
+//     }
+// });
+
+// console.log(person3);
+
+Object.defineProperty ( person3 , "fullName2" ,{
+    set: function (lang) {
+        return this.language = lang;
+    }
+});
+
+person3.fullName = "pakistan";
+console.log(person3);
+
