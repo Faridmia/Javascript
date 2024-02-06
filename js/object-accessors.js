@@ -26,12 +26,12 @@ person2.lang = "Bn";
 console.log(person2.language);
 
 
-// const person3 = {
-//     firstName: "John",
-//     lastName: "Doe",
-//     language: ""
+const person3 = {
+    firstName: "John",
+    lastName: "Doe",
+    language: ""
     
-// };
+};
 
 // Object.defineProperty ( person3 , "fullName" ,{
 //     get: function () {
