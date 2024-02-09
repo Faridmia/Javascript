@@ -17,3 +17,14 @@ river.set("jomuna","pabna");
 river.set("kornofuly","puty");
 
 console.log(river.get("padma"));
+
+
+const fruits2 = new Map([
+    ["apples", 500],
+    ["bananas", 300],
+    ["oranges", 200]
+]);
+
+fruits2.clear();
+
+console.log(fruits2.size);
