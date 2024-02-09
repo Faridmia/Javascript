@@ -55,3 +55,24 @@ for( const m of fruits4.entries() ) {
 }
 
 console.log(data);
+
+const fruits5 = new Map([
+    ["apples", 500],
+    ["bananas", 300],
+    ["oranges", 200]
+]);
+
+let txt2 = "";
+for(const x of fruits5.keys() ) {
+    txt2 += x + "\n";
+}
+
+console.log(txt2);
+
+let txt3 = "";
+for(const x of fruits5.values() ) {
+    txt3 += x + "\n";
+}
+
+console.log(txt3);
+  
