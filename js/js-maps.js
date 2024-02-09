@@ -28,3 +28,30 @@ const fruits2 = new Map([
 fruits2.clear();
 
 console.log(fruits2.size);
+
+const fruits3 = new Map([
+    ["apples", 500],
+    ["bananas", 300],
+    ["oranges", 200]
+]);
+
+let text = "";
+fruits3.forEach(function(key,value) {
+    text += key + "=" + value + "\n";
+});
+
+console.log(text);
+
+const fruits4 = new Map([
+    ["apples", 500],
+    ["bananas", 300],
+    ["oranges", 200]
+]);
+
+let data = "";
+
+for( const m of fruits4.entries() ) {
+    data += m + "\n";
+}
+
+console.log(data);
