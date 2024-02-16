@@ -16,6 +16,6 @@ const perso2 = {
     lastName: "rahim"
 }
 
-let data = person.fullName.call(person1,"dhaka","bangladesh");
+let data = person.fullName.apply(person1,["dhaka","bangladesh"]);
 
 console.log(data);
