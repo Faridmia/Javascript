@@ -19,3 +19,11 @@ const perso2 = {
 let data = person.fullName.apply(person1,["dhaka","bangladesh"]);
 
 console.log(data);
+
+let maxNum = Math.max(10,50,99);
+
+console.log(maxNum);
+
+let maxN = Math.max.apply(null, [1,2,5]);
+
+console.log(maxN);
