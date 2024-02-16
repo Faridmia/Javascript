@@ -75,4 +75,10 @@ for(const x of fruits5.values() ) {
 }
 
 console.log(txt3);
-  
+
+let total = 0;
+
+for (let x of fruits5.values() ) {
+    total += x;
+}
+console.log(total);
