@@ -4,7 +4,7 @@ function display(some) {
 
 function calculator(num1,num2,callback) {
     let sum = num1 + num2;
-    display(sum);
+    callback(sum);
     //return sum;
 }
 
