@@ -1,5 +1,3 @@
-
-
 function myMove() {
     let id = null;
     let ele = document.querySelector('.animate');
