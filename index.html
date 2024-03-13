@@ -32,18 +32,22 @@
   <body>
    
 
-  <p>Click DIV 1:</p>
-  <div onclick="func2()">DIV 2
-    <div onclick="func1(event)">DIV 1</div>
-  </div>
-
-  Stop propagation:
-  <input type="checkbox" id="check">
+    <h2>Finding HTML Elements by Tag Name</h2>
+    <p>Hello World!</p>
+    <p>Hello Sweden!</p>
+    <p>Hello Japan!</p>
+    
+    <p id="demo"></p>
     
 
-    <script src="js/propagation.js" type="text/javascript"></script>
+    <!-- <script src="js/propagation.js" type="text/javascript"></script> -->
 
-    
+    <script>
+      const myElements = document.getElementsByTagName("p");
+
+      console.log(myElements);
+      document.getElementById("demo").innerHTML = "The text in the first paragraph is: " + myElements[0].innerHTML;
+      </script>
 
 
   </body>
