@@ -33,19 +33,23 @@
    
 
     <h2>Finding HTML Elements by Tag Name</h2>
-    <p>Hello World!</p>
+    <p id="tumi">Hello World!</p>
     <p>Hello Sweden!</p>
     <p>Hello Japan!</p>
     
-    <p id="demo"></p>
+    <p id="demo">hello world</p>
     
 
     <!-- <script src="js/propagation.js" type="text/javascript"></script> -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
+
+      let myText = jQuery("#demo").text();
       const myElements = document.getElementsByTagName("p");
 
-      console.log(myElements);
+      document.getElementById("tumi").style.display = "none";
+
+      console.log(myText);
       document.getElementById("demo").innerHTML = "The text in the first paragraph is: " + myElements[0].innerHTML;
       </script>
 
