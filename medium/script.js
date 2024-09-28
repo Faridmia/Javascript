@@ -116,21 +116,59 @@ users4.forEach ( ( { id,name3 } ) => {
 // fetchData('https://jsonplaceholder.typicode.com/posts');
 
 
-fetch('https://jsonplaceholder.typicode.com/posts') 
-  .then(response => response.json())  // প্রথম প্রমিজের সমাধান হলে JSON ফরম্যাটে ডেটা নেয়া
-  .then(data => {
-    console.log('Data:', data);  // প্রথম ডেটা প্রিন্ট করা
-    return fetch('https://jsonplaceholder.typicode.com/comments');  // পরবর্তী API কল
-  })
-  .then(response => response.json())  // দ্বিতীয় প্রমিজের সমাধান হলে JSON ফরম্যাটে ডেটা নেয়া
-  .then(moreData => {
-    console.log('More Data:', moreData);  // দ্বিতীয় ডেটা প্রিন্ট করা
-    return fetch('https://jsonplaceholder.typicode.com/albums');  // তৃতীয় API কল
-  })
-  .then(response => response.json())  // তৃতীয় প্রমিজের সমাধান হলে JSON ফরম্যাটে ডেটা নেয়া
-  .then(evenMoreData => {
-    console.log('Even More Data:', evenMoreData);  // তৃতীয় ডেটা প্রিন্ট করা
-  })
-  .catch(error => {
-    console.error('Error:', error);  // কোনো ত্রুটি হলে তা কনসোলে দেখানো
-  });
+  // fetch('https://jsonplaceholder.typicode.com/posts')
+  //   .then( response => response.json() )
+  //   .then( data => {
+  //     console.log("first data call", data );
+  //     return fetch('https://jsonplaceholder.typicode.com/comments');
+  //   })
+  //   .then( response => response.json() )
+  //   .then( moreData => {
+  //     console.log("moredata", data );
+  //     return fetch('https://jsonplaceholder.typicode.com/albums');  // তৃতীয় API কল
+  //   })
+  //   .then(response => response.json())  // তৃতীয় প্রমিজের সমাধান হলে JSON ফরম্যাটে ডেটা নেয়া
+  //   .then(evenMoreData => {
+  //     console.log('Even More Data:', evenMoreData);  // তৃতীয় ডেটা প্রিন্ট করা
+  //   })
+  //   .catch(error => {
+  //     console.error('Error:', error);  // কোনো ত্রুটি হলে তা কনসোলে দেখানো
+  //   });
+
+
+    // const fetchData1 = fetch('https://jsonplaceholder.typicode.com/posts').then(response => response.json());
+    // const fetchData2 = fetch('https://jsonplaceholder.typicode.com/comments').then(response => response.json());
+    // Promise.all([fetchData1, fetchData2])
+    // .then(([data1, data2]) => {
+    // console.log('Data 1:', data1);
+    // console.log('Data 2:', data2);
+    // })
+    // .catch(error => {
+    // console.error('Error:', error);
+    // });
+
+
+
+    function throttle(func, limit) {
+      let lastFunc;
+      let lastRan;
+      return function (...args) {
+          if (!lastRan) {
+              func.apply(this, args); // ফাংশনটি এখানে প্রথমবার রান করবে
+              lastRan = Date.now();
+          } else {
+              clearTimeout(lastFunc); // পূর্ববর্তী সেট করা টাইমআউট ক্লিয়ার করা হচ্ছে
+              lastFunc = setTimeout(() => {
+                  if (Date.now() - lastRan >= limit) {
+                      func.apply(this, args); // সীমাবদ্ধ সময় পেরোনোর পর ফাংশনটি রান হবে
+                      lastRan = Date.now();
+                  }
+              }, limit - (Date.now() - lastRan)); // বাকি সময়ের জন্য অপেক্ষা করা হচ্ছে
+          }
+      };
+    }
+  
+  // উদাহরণ হিসেবে স্ক্রল ইভেন্ট থ্রোটল করা
+  window.addEventListener('scroll', throttle(() => {
+      console.log('Window scrolled');
+  }, 200));
