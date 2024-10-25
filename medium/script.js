@@ -154,21 +154,30 @@ users4.forEach ( ( { id,name3 } ) => {
       let lastRan;
       return function (...args) {
           if (!lastRan) {
-              func.apply(this, args); // ফাংশনটি এখানে প্রথমবার রান করবে
+              func.apply(this, args); 
               lastRan = Date.now();
           } else {
-              clearTimeout(lastFunc); // পূর্ববর্তী সেট করা টাইমআউট ক্লিয়ার করা হচ্ছে
+              clearTimeout(lastFunc); 
               lastFunc = setTimeout(() => {
                   if (Date.now() - lastRan >= limit) {
-                      func.apply(this, args); // সীমাবদ্ধ সময় পেরোনোর পর ফাংশনটি রান হবে
+                      func.apply(this, args); 
                       lastRan = Date.now();
                   }
-              }, limit - (Date.now() - lastRan)); // বাকি সময়ের জন্য অপেক্ষা করা হচ্ছে
+              }, limit - (Date.now() - lastRan)); 
           }
       };
     }
   
-  // উদাহরণ হিসেবে স্ক্রল ইভেন্ট থ্রোটল করা
-  window.addEventListener('scroll', throttle(() => {
-      console.log('Window scrolled');
-  }, 200));
+ 
+  // window.addEventListener('scroll', throttle(() => {
+  //     console.log('Window scrolled');
+  // }, 200));
+
+
+  // 
+
+  const deepObj = { a: 1, b: {c:2 } };
+
+  const deepClone = JSON.parse( JSON.stringify(deepObj));
+
+  console.log( deepClone );
