@@ -32,10 +32,33 @@ movements.forEach( function( movement )  {
     }
 });
 
-movements.forEach( function( movement, index, arr )  { // movement means current element // index 
+movements.forEach( function( movement, index, arr )  { // movement means current element // 2nd element index // 3rd element enter array
     if( movement > 0 ) {
         console.log(`movement ${ index + 1 } you deposited ${movement} `);
     } else {
         console.log(`movement ${ index + 1 } you withdrew ${Math.abs( movement) } `);
     }
+});
+
+
+// array map
+
+const currencies = new Map([
+    ['USD',"United States dollar"],
+    ['EUR',"Euro"],
+    ['GBP',"Pound sterling"],
+]);
+
+currencies.forEach( function( value, key, map ) {
+    console.log(`${key}: ${value}`);
+});
+
+// set
+
+const currenciesUnique = new Set(['USD','GBP','USD','EUR','EUR']);
+
+console.log( currenciesUnique);
+
+currenciesUnique.forEach( function( value, _, map ) {
+    console.log(`${value}: ${value}`);
 });
