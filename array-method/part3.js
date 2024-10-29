@@ -32,3 +32,16 @@ console.log( movementUSDfor );
 const movementsUSD2 = movements.map(  mov => mov * eurToUsd );
 
 console.log( movementsUSD2 );
+
+
+const movementDesc = movements.map( ( movement, i ) => 
+
+    `movement ${ i + 1 }: You ${ movement > 0  ? 'deposited' : 'withdrew'}  ${Math.abs( movement) }`
+    // if( movement > 0 ) {
+    //     return `movement ${ i + 1 } you deposited ${movement}`;
+    // } else {
+    //     return `movement ${ i + 1 } you withdrew ${Math.abs( movement) }`;
+    // }
+ );
+
+console.log( movementDesc );
