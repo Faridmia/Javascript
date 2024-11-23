@@ -100,23 +100,45 @@
 // checkIn(flight, jonas);
 
 // Functions Accepting Callback Functions
-const oneWord = function (str) {
-  return str.replace(/ /g, '').toLowerCase();
-};
+// const oneWord = function (str) {
+//   return str.replace(/ /g, '').toLowerCase();
+// };
 
-const upperFirstWord = function( str ) {
-    const [first, ...others ] = str.split(' ');
+// const upperFirstWord = function( str ) {
+//     const [first, ...others ] = str.split(' ');
 
-    return [ first.toUpperCase(), ...others].join(' ');
+//     return [ first.toUpperCase(), ...others].join(' ');
+// }
+
+// // Higher-order function
+// const transformer = function (str, fn) {
+//   console.log(`Original string: ${str}`);
+//   console.log(`Transformed string: ${fn(str)}`);
+
+//   console.log(`Transformed by: ${fn.name}`);
+// };
+
+// transformer('bangladesh is a small country!', upperFirstWord);
+// transformer('JavaScript is the best!', oneWord);
+
+
+// Functions Returning Functions
+
+const greet = function( greeting ) {
+    return function( name ) {
+      console.log( `${greeting} ${name}` );
+    }
 }
 
-// Higher-order function
-const transformer = function (str, fn) {
-  console.log(`Original string: ${str}`);
-  console.log(`Transformed string: ${fn(str)}`);
+const greeterHey = greet('Hey');
 
-  console.log(`Transformed by: ${fn.name}`);
-};
+greeterHey('Jonas');
+greeterHey('Steven');
 
-transformer('bangladesh is a small country!', upperFirstWord);
-transformer('JavaScript is the best!', oneWord);
+greet('Hello')('Jonas');
+
+// Challenge
+
+const greetArr = greeting => name => console.log(`${greeting} ${name}`);
+
+greetArr('Hi')('Jonas');
