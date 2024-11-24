@@ -231,3 +231,27 @@ const lufthansa = {
 
 
 ( () => console.log('This will never run again two'))();
+
+{
+  const isPrivate = 23;
+  var notPrivate = 46;
+}
+// console.log(isPrivate);
+console.log(notPrivate);
+
+// Closures function
+
+const secureBooking = function() {
+    let passengerCount = 0;
+
+    return function() {
+      passengerCount++;
+      console.log(`${passengerCount} passenger`);
+    }
+}
+
+const booker = secureBooking();
+
+booker();
+booker();
+booker();
