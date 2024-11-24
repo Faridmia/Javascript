@@ -209,16 +209,25 @@ const lufthansa = {
 // bookEW23('Martha Cooper');
 
 
-lufthansa.planes = 300;
-lufthansa.buyPlane = function () {
-  console.log(this);
+// lufthansa.planes = 300;
+// lufthansa.buyPlane = function () {
+//   console.log(this);
 
-  this.planes++;
-  console.log(this.planes);
-};
+//   this.planes++;
+//   console.log(this.planes);
+// };
 
-lufthansa.buyPlane();
+// lufthansa.buyPlane();
 
-document
-  .querySelector('.buy')
-  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+// document
+//   .querySelector('.buy')
+//   .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+// invoked function
+( function() {
+  console.log('This will never run again');
+  const isPrivate = 23;
+})();
+
+
+( () => console.log('This will never run again two'))();
