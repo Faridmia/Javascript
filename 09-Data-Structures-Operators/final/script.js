@@ -347,11 +347,52 @@ for( const odd of odds ) average += odd;
 
 average /= odds.length;
 
-console.log(average)
+console.log(game.odds);
 
 
 // 3.
-// for (const [team, odd] of Object.entries(game.odds)) {
-//   const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
-//   console.log(`Odd of ${teamStr} ${odd}`);
-// }
+
+
+for( const [team, odd ] of Object.entries(game.odds ) ) {
+
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+
+  console.log(`odd of ${teamStr}: ${odd}`);
+}
+
+
+const scorers = {};
+
+for( const player of game.scored ) {
+  scorers[player] ? scorers[player]++ : ( scorers[player] = 1 );
+}
+
+console.log(scorers);
+
+function scopeTest() {
+  var a = 1;
+  let b = 2;
+  const c = 3;
+  
+  if (true) {
+  var a = 4;
+  let b = 5;
+  const c = 6;
+  console.log(a, b, c);
+  }
+  
+  console.log(a, b, c);
+ }
+ 
+ scopeTest();
+
+ let arr = [1, 2, 3, 4, 5];
+
+let result = arr.reduce((acc, cur) => {
+ if (cur % 2 === 0) {
+ return [...acc, cur * 2];
+ }
+ return acc;
+}, []);
+
+console.log(result.length);
