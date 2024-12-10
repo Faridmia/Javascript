@@ -581,3 +581,11 @@ console.log(question.entries() );
 
 console.log([...question.keys() ]);
 console.log([...question.values() ]);
+
+// convert object to map
+
+console.log( Object.entries( openingHours ) );
+
+const hoursMap = new Map( Object.entries( openingHours ) );
+
+console.log(hoursMap);
