@@ -336,110 +336,155 @@ const game = {
 
 
 // 1.
-for (const [i, player] of game.scored.entries())
-  console.log(`Goal ${i + 1}: ${player}`);
+// for (const [i, player] of game.scored.entries())
+//   console.log(`Goal ${i + 1}: ${player}`);
 
-// 2.
-const odds = Object.values(game.odds);
+// // 2.
+// const odds = Object.values(game.odds);
 
-let average = 0;
-for( const odd of odds ) average += odd;
+// let average = 0;
+// for( const odd of odds ) average += odd;
 
-average /= odds.length;
+// average /= odds.length;
 
-console.log(game.odds);
-
-
-// 3.
+// console.log(game.odds);
 
 
-for( const [team, odd ] of Object.entries(game.odds ) ) {
-
-  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
-
-  console.log(`odd of ${teamStr}: ${odd}`);
-}
+// // 3.
 
 
-const scorers = {};
+// for( const [team, odd ] of Object.entries(game.odds ) ) {
 
-for( const player of game.scored ) {
-  scorers[player] ? scorers[player]++ : ( scorers[player] = 1 );
-}
+//   const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
 
-console.log(scorers);
+//   console.log(`odd of ${teamStr}: ${odd}`);
+// }
 
-function scopeTest() {
-  var a = 1;
-  let b = 2;
-  const c = 3;
+
+// const scorers = {};
+
+// for( const player of game.scored ) {
+//   scorers[player] ? scorers[player]++ : ( scorers[player] = 1 );
+// }
+
+// console.log(scorers);
+
+// function scopeTest() {
+//   var a = 1;
+//   let b = 2;
+//   const c = 3;
   
-  if (true) {
-  var a = 4;
-  let b = 5;
-  const c = 6;
-  console.log(a, b, c);
-  }
+//   if (true) {
+//   var a = 4;
+//   let b = 5;
+//   const c = 6;
+//   console.log(a, b, c);
+//   }
   
-  console.log(a, b, c);
- }
+//   console.log(a, b, c);
+//  }
  
- scopeTest();
+//  scopeTest();
 
- let arr = [1, 2, 3, 4, 5];
+//  let arr = [1, 2, 3, 4, 5];
 
-let result = arr.reduce((acc, cur) => {
- if (cur % 2 === 0) {
- return [...acc, cur * 2];
- }
- return acc;
-}, []);
+// let result = arr.reduce((acc, cur) => {
+//  if (cur % 2 === 0) {
+//  return [...acc, cur * 2];
+//  }
+//  return acc;
+// }, []);
 
-console.log(result.length);
-
-
-// with optional chaning
-
-if( restaurant.openingHours && restaurant.openingHours.mon )
-  console.log(restaurant.openingHours.mon.open);
+// console.log(result.length);
 
 
-console.log(restaurant.openingHours.thu?.open);
-console.log(restaurant.openingHours?.thu?.open);
+// // with optional chaning
+
+// if( restaurant.openingHours && restaurant.openingHours.mon )
+//   console.log(restaurant.openingHours.mon.open);
+
+
+// console.log(restaurant.openingHours.thu?.open);
+// console.log(restaurant.openingHours?.thu?.open);
 
 
 // Example
-const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+// const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
-for( const day of days ) {
-    const open = restaurant.openingHours[day]?.open ?? 'closed';
-    console.log(`On ${day}, we open at ${open}`);
+// for( const day of days ) {
+//     const open = restaurant.openingHours[day]?.open ?? 'closed';
+//     console.log(`On ${day}, we open at ${open}`);
+// }
+
+// // method
+
+// console.log( restaurant.order?.(0,1) ?? 'Method does not exist..');
+
+// console.log( restaurant.orderRisotto?.( 0,1 ) ?? 'Method does not exist..');
+
+// // Arrays
+// const users = [{ name: 'Jonas', email: 'hello@jonas.io' }];
+// // const users = [];
+
+// console.log( users[0]?.name ?? "user array emtpy");
+
+// if( users.length > 0 ) console.log(users[0].name);
+// else console.log('user array empty..');
+
+
+// // the for loop
+
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu ];
+
+// for( const item of menu ) console.log( item );
+
+// for ( const [i, el ] of menu.entries() ) {
+//   console.log(`${i + 1}: ${el}`);
+// }
+
+// console.log([...menu.entries() ]);
+
+
+// coading challenge 1
+
+// 1
+
+const [ players1, players2 ] = game.players;
+
+console.log( players1, players2 );
+
+// 2
+const [gk, ...fieldPlayers ] = players1;
+
+console.log( gk, fieldPlayers );
+
+
+// 3
+
+const allPlayers = [...players1, ...players2 ];
+
+console.log(allPlayers);
+
+ const players1Final = [...players1,'Thiago','Coutinho','Periscic'];
+
+// 5.
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
+
+console.log(team1, draw, team2);
+
+// 6.
+const printGoals = function(...players) {
+  console.log(players);
 }
 
-// method
+printGoals('Davis','Muller');
 
-console.log( restaurant.order?.(0,1) ?? 'Method does not exist..');
+printGoals('Davis','Muller','Lewandowski','Kimich');
 
-console.log( restaurant.orderRisotto?.( 0,1 ) ?? 'Method does not exist..');
+// printGoals(...game.scored);
 
-// Arrays
-const users = [{ name: 'Jonas', email: 'hello@jonas.io' }];
-// const users = [];
+team1 < team2 && console.log(`Team 1 is more likely to win`);
 
-console.log( users[0]?.name ?? "user array emtpy");
-
-if( users.length > 0 ) console.log(users[0].name);
-else console.log('user array empty..');
-
-
-// the for loop
-
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu ];
-
-for( const item of menu ) console.log( item );
-
-for ( const [i, el ] of menu.entries() ) {
-  console.log(`${i + 1}: ${el}`);
-}
-
-console.log([...menu.entries() ]);
+team1 > team2 && console.log(`Team 2 is more l likely to win`);
