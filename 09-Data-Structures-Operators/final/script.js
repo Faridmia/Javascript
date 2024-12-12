@@ -658,3 +658,35 @@ console.log(airline.slice(1, -1));
 
 console.log('a+very+nice+string'.split('+'));
 console.log('Jonas Schmedtmann'.split(' '));
+
+
+const [firstName, lastName] = 'Jonas Schmedtmann'.split(' ');
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+
+const capitalizeName = function(name) {
+    const names = name.split(" ");
+
+    const namesUpper = [];
+
+    for( const n of names ) {
+        namesUpper.push( n.replace(n[0], n[0].toUpperCase() ) );
+    }
+
+    console.log(namesUpper.join(' '));
+};
+
+
+capitalizeName('jessica ann smith davis');
+capitalizeName('jonas schmedtmann');
+
+
+const maskCreditCard = function (number) {
+  const str = number + ''; 
+  const last = str.slice(-4); 
+  return last.padStart(str.length, '*'); 
+};
+console.log(maskCreditCard(64637836));
+console.log(maskCreditCard(43378463864647384));
+console.log(maskCreditCard('334859493847755774747'));
