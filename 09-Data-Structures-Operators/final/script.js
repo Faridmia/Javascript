@@ -653,3 +653,8 @@ console.log(airline.slice(airline.lastIndexOf(' ') + 1));
 
 console.log(airline.slice(-2));
 console.log(airline.slice(1, -1));
+
+
+
+console.log('a+very+nice+string'.split('+'));
+console.log('Jonas Schmedtmann'.split(' '));
