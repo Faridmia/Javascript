@@ -713,4 +713,31 @@ console.log(announcement.replace(/door/g, 'gate'));
 // All passengers come to boarding gate 23. Boarding door 23!
 // All passengers come to boarding gate 23. Boarding gate 23!
 
+console.log(airline.toLowerCase());
 
+console.log(airline.toUpperCase());
+
+// Fix capitalization in name
+const passenger = 'jOnAS'; // Jonas
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+
+// Comparing emails
+const email = 'hello@jonas.io';
+const loginEmail = '  Hello@Jonas.Io \n';
+
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+
+// replacing email
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£','$').replace(',','.');
+
+console.log(priceUS);
