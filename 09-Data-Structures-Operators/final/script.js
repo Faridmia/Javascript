@@ -741,3 +741,14 @@ const priceGB = '288,97£';
 const priceUS = priceGB.replace('£','$').replace(',','.');
 
 console.log(priceUS);
+
+
+// Booleans
+const plane3 = 'Airbus A320neo';
+console.log(plane3.includes('A320'));
+console.log(plane3.includes('Boeing'));
+console.log(plane3.startsWith('Airb'));
+
+if (plane3.startsWith('Airbus') && plane3.endsWith('neo')) {
+  console.log('Part of the NEW ARirbus family');
+}
