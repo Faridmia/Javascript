@@ -186,3 +186,39 @@ console.log( account.latest );
 account.latest = 50;
 
 console.log(account.movements);
+
+
+// object create 
+
+const PersonProto = {
+
+  calcAge() {
+    console.log( 2037 - this.birthYear );
+  },
+
+  init( firstName, birthYear ) {
+      this.firstName = firstName;
+      this.birthYear = birthYear;
+  }
+};
+
+
+const steven = Object.create(PersonProto); // object thake sorasori prototype chain create korte use hoi
+steven.init("steven",1997);
+console.log(steven);
+
+steven.name = "Steven";
+steven.birthYear = '2002';
+
+
+steven.calcAge();
+
+console.log( steven.__proto__ === PersonProto ); // output true
+
+const sarah = Object.create(PersonProto);
+
+sarah.init("Sarah",1997);
+
+console.log(sarah);
+
+sarah.calcAge();
