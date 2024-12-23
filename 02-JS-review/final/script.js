@@ -167,3 +167,86 @@ const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
  const [primaryGenre, secondaryGenre, ...otherGenres ] = genres;
 
  console.log(  primaryGenre, secondaryGenre, otherGenres );
+
+ // const primaryGenre = genres[0];
+// const seco
+
+
+const newGenres = ["epic fantasy", ...genres];
+
+newGenres;
+
+console.log(newGenres);
+
+
+const updatedBook = {
+  ...book,
+
+  // adding a new property
+
+  moviePublicationDate: "2001-12-19",
+  // overview an existing property
+
+  pages: 1210
+};
+
+updatedBook;
+
+console.log(publicationDate);
+
+
+// function getYear(str) {
+//   return str.split("-")[0];
+// }
+
+const getYear = ( str ) => str.split("-")[0];
+
+console.log(getYear( getYear(publicationDate) ) );
+
+const summary = `${title}, a ${pages} long book, was written by ${author} and published in ${getYear(publicationDate)}. The book has ${hasMovieAdaptation ? "" : "not"} adapted as a movie `;
+
+summary;
+
+console.log(summary)
+
+const pagesRange = pages > 1000 ? "over a thousand" : "less than 1000";
+
+pagesRange;
+
+console.log(`The book has ${pagesRange} pages`);
+
+console.log(true && "Some string");
+console.log(false && "Some string");
+console.log(hasMovieAdaptation && "This book has a movie");
+
+// falsy: 0, '', null, undefined
+console.log("jonas" && "Some string");
+console.log(0 && "Some string");
+
+console.log(true || "Some string");
+console.log(false || "Some string");
+
+
+
+const spanishTranslation = book.translations.spanish || "not translation";
+
+spanishTranslation;
+
+console.log( spanishTranslation );
+
+console.log(book.translations.spanish);
+
+
+const countWrong = book?.reviews?.librarything?.reviewsCount || "no data";
+countWrong;
+
+console.log(countWrong);
+
+function getTotalReviewCount(book) {
+    const goodreads = book?.reviews?.goodreads?.reviewsCount;
+    const librarything = book?.reviews?.librarything?.reviewsCount ?? 0;
+    librarything;
+    return goodreads + librarything;
+}
+
+console.log(getTotalReviewCount(book));
