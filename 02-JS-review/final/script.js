@@ -264,3 +264,13 @@ const titles = books.map(( book ) => book.title );
 titles;
 
 console.log( titles );
+
+const essentialData = books.map( ( book ) => ( {
+    title: book.title,
+    author: book.author,
+    reviewsCount: getTotalReviewCount( book ),
+}));
+
+essentialData;
+
+console.log( essentialData )
