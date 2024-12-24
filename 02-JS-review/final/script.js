@@ -257,13 +257,13 @@ books;
 
 const x = [ 1,2,3,4,5].map( ( el ) => el * 2 );
 
-console.log( x );
+// console.log( x );
 
 const titles = books.map(( book ) => book.title );
 
 titles;
 
-console.log( titles );
+// console.log( titles );
 
 const essentialData = books.map( ( book ) => ( {
     title: book.title,
@@ -273,4 +273,18 @@ const essentialData = books.map( ( book ) => ( {
 
 essentialData;
 
-console.log( essentialData )
+// console.log( essentialData );
+
+
+const longBooksWithMovie = books.filter( ( book ) => book.pages > 500 ).filter((book) => book.hasMovieAdaptation );
+
+longBooksWithMovie;
+
+console.log( longBooksWithMovie );
+
+const adventureBooks = books
+  .filter((books) => books.genres.includes("adventure"))
+  .map((book) => book.title);
+adventureBooks;
+
+console.log( adventureBooks );
