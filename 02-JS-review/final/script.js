@@ -322,7 +322,29 @@ const todos = getTodos();
 
 getTodos().then( (todos) => {
   todos.forEach(element => {
-    console.log(`id: ${element.id} title: ${element.title} completed: ${element.completed}`);
+    //console.log(`id: ${element.id} title: ${element.title} completed: ${element.completed}`);
   });
 });
 
+
+async function getData() {
+    const datas = await fetch("https://jsonplaceholder.typicode.com/todos");
+
+    const demos = datas.json();
+
+    return demos;
+}
+
+const outsideData = getData();
+
+( async function () {
+    const data = await getTodos();
+    data.forEach(element => {
+      console.log(`id: ${element.id} title: ${element.title} completed: ${element.completed}`);
+    });
+})();
+
+
+getTodos().then( ( data ) => {
+    console.log( data );
+})
