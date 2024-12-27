@@ -1,3 +1,5 @@
+
+
 const data = [
   {
     id: 1,
@@ -288,3 +290,39 @@ const adventureBooks = books
 adventureBooks;
 
 console.log( adventureBooks );
+
+ console.log("api data");
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then(( res ) => res.json() )
+  .then( (data ) => {
+    data.forEach(element => {
+       // console.log(`id: ${element.id} title: ${element.title} completed: ${element.completed}`);
+    });
+  });
+
+
+async function getTodos() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const data = res.json();
+
+  console.log(data);
+
+  return data;
+}
+
+
+const todos = getTodos();
+
+(async function() {
+    const data = await getTodos();
+    data.forEach(element => {
+     // console.log(`id: ${element.id} title: ${element.title} completed: ${element.completed}`);
+  });
+})();
+
+getTodos().then( (todos) => {
+  todos.forEach(element => {
+    console.log(`id: ${element.id} title: ${element.title} completed: ${element.completed}`);
+  });
+});
+
