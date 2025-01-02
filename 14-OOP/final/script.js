@@ -109,7 +109,7 @@ bmw.accelerate();
 // Class declaration
 
 
-class PersonCl {
+class PersonCl2 {
 
   constructor( fullName, birthYear ) {
     this.fullName = fullName;
@@ -143,27 +143,27 @@ class PersonCl {
   }
 }
 
-const jessica = new PersonCl("Farid Mia", 1997 );
+const jessica = new PersonCl2("Farid Mia", 1997 );
 console.log(jessica);
 jessica.calcAge();
 console.log( jessica.age );
 
 
-console.log(jessica.__proto__ === PersonCl.prototype);
+console.log(jessica.__proto__ === PersonCl2.prototype);
 
 // PersonCl.prototype.greet = function() {
 //     console.log(`Hey ${this.firstName}`);
 // };
 
-PersonCl.prototype.greet = function() {
+PersonCl2.prototype.greet = function() {
   const firstName = this.fullName.split(' ')[0];
   console.log(`Hey ${firstName}`);
 };
 
 jessica.greet();
 
-const walter = new PersonCl('Walter White', 1965);
-PersonCl.hey(); // static method only class thake e call kora jai but object thake call kora jai na
+const walter = new PersonCl2('Walter White', 1965);
+PersonCl2.hey(); // static method only class thake e call kora jai but object thake call kora jai na
 
 
 // getter and setter
@@ -286,7 +286,7 @@ Student.prototype.introduce = function() {
 
 const mike = new Student('Mike', 2020, 'Computer Science');
 mike.introduce();
-mike.calcAge();
+// mike.calcAge();
 
 console.log(mike.__proto__);
 console.log(mike.__proto__.__proto__);
@@ -360,3 +360,75 @@ class StudentCl extends PersonCl {
 const martha = new StudentCl('Martha Jones', 2012, 'Computer Science');
 martha.introduce();
 martha.calcAge();
+
+
+
+
+const PersonProtoUpdate = {
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  },
+
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+
+const steven3 = Object.create(PersonProtoUpdate);
+
+const StudentProto = Object.create(PersonProtoUpdate);
+StudentProto.init = function (firstName, birthYear, course) {
+  PersonProtoUpdate.init.call(this, firstName, birthYear);
+  this.course = course;
+};
+
+StudentProto.introduce = function () {
+  // BUG in video:
+  // console.log(`My name is ${this.fullName} and I study ${this.course}`);
+  
+  // FIX:
+  console.log(`My name is ${this.firstName} and I study ${this.course}`);
+};
+
+const jay = Object.create(StudentProto);
+jay.init('Jay', 2010, 'Computer Science');
+jay.introduce();
+jay.calcAge();  
+
+
+const PersonProto2 = {
+
+  calcAge() {
+      console.log( 2037 - this.birthYear );
+  },
+
+  init( firstName, birthYear ) {
+      this.birthYear = birthYear;
+      this.firstName = firstName;
+  }
+}
+
+const personobj22 = Object.create(PersonProto2);
+
+const StudentProto2 = Object.create(PersonProto2);
+
+StudentProto2.init = function( firstName, birthYear, course ) {
+  personobj22.init.call( this, firstName, birthYear );
+
+  this.course = course;
+}
+
+
+StudentProto2.introduce = function() {
+
+  console.log(`my name is ${this.firstName} and I am study ${this.course}`);
+}
+
+
+const jay2 = Object.create(StudentProto2);
+
+jay2.init("jay", 2025, "Computer Science");
+
+jay2.introduce();
+jay2.calcAge();
