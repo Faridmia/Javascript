@@ -63,3 +63,25 @@ const todos = getTodos();
         console.log(`id: ${element.id} title: ${element.title} completed: ${element.completed}`);
     });
 })();
+
+function Car( brand, model ) {
+    this.brand = brand;
+    this.model = model;
+}
+
+Car.prototype.getDetails = function() {
+    return `${this.brand} - ${this.model}`;
+}
+  
+Car.prototype.startEngine = function() {
+    return `${this.brand} engine started`;
+}
+  
+
+
+const car1 = new Car("Toyota", "Corolla");
+const car2 = new Car("Tesla", "Model 3");
+  
+console.log(car1.getDetails()); 
+console.log(car2.startEngine()); 
+  
