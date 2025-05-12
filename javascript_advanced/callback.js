@@ -1,5 +1,3 @@
-
-
 function processUserInput( callback ) {
     const name = "farid mia";
 
