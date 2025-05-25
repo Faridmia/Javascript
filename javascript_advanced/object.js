@@ -52,3 +52,14 @@ for (const key in profile) {
   const value = profile[key];
   console.log(key, value);
 }
+
+const actor = {
+  name: "ananata",
+  age: 30,
+  phone: "0188232232",
+  money: 123132313,
+};
+
+const { name, age: boyos, money, phone } = actor;
+console.log(name);
+console.log(boyos);
