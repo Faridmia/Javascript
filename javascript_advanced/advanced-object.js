@@ -45,3 +45,22 @@ const [, second, , fourth] = numbers;
 
 console.log(second);
 console.log(fourth);
+
+const numbersset = [1, 2, 2, 3, 4, 4, 5];
+const uniqueNumbers = new Set(numbersset);
+
+let numArray = [...uniqueNumbers];
+console.log(numArray);
+
+const myApp = new Map();
+
+myApp.set("myname", "farid mia");
+myApp.set("address", "faridpur");
+
+console.log(myApp);
+
+console.log(myApp.get("myname"));
+
+for (const [key, value] of myApp) {
+  console.log(key, value);
+}
