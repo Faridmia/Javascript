@@ -85,3 +85,7 @@ example1.add(10);
 example1.add(30);
 
 console.log(example1);
+
+const sentence = "I have an apple.";
+const pattern = /apple/;
+console.log(pattern.test(sentence));
