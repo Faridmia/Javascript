@@ -89,3 +89,7 @@ console.log(example1);
 const sentence = "I have an apple.";
 const pattern = /apple/;
 console.log(pattern.test(sentence));
+
+const sentence2 = "I have an apple and another apple.";
+const newSentence = sentence2.replace(/apple/g, "banana");
+console.log(newSentence);
