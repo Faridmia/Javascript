@@ -1,3 +1,5 @@
+const { values } = require("lodash");
+
 const actor = {
   name: "ananata",
   age: 30,
@@ -64,3 +66,22 @@ console.log(myApp.get("myname"));
 for (const [key, value] of myApp) {
   console.log(key, value);
 }
+
+myApp.forEach((value, key) => {
+  console.log(` ${key} = ${value}`);
+});
+
+const object = Object.fromEntries(myApp);
+
+console.log(object.myname);
+
+// example 1
+
+let example1 = new Set();
+
+example1.add(10);
+example1.add(20);
+example1.add(10);
+example1.add(30);
+
+console.log(example1);
