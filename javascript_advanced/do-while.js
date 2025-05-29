@@ -1,3 +1,5 @@
+const { functionsIn } = require("lodash");
+
 let count = 1;
 while (count > 5) {
   console.log(count);
@@ -59,3 +61,25 @@ if ((first + second).toFixed(1) === (0.3).toFixed(1)) {
 } else {
   console.log("they are not the same");
 }
+
+(function () {
+  console.log("This is an IIFE!...");
+})();
+
+(() => {
+  console.log("Arrow function IIFE!...");
+})();
+
+(function (temperature) {
+  celsius = temperature - 273.15;
+  console.log(`Temperature in Celsius: ${celsius.toFixed(2)}°C`);
+})(300);
+
+function getContext() {
+  console.log(this);
+}
+
+getContext();
+
+let public = "faridmia";
+console.log(public);
