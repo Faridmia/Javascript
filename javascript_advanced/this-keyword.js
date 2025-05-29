@@ -152,3 +152,42 @@ const truck = {
 
 car.drive.call(bike);
 car.drive.call(truck);
+
+const employee2 = {
+  name: "hasan",
+  role: "web developer",
+  details: function () {
+    console.log(`name ${this.name} and role is ${this.role}`);
+  },
+};
+
+employee2.details();
+
+let manager2 = {
+  name: "abu taleb",
+  role: "wordpress developer",
+};
+
+employee2.details.apply(manager2);
+
+const classroom = {
+  name: "Farid mia",
+  students: ["hasan", "raju", "naim"],
+  attendance: function () {
+    console.log(`name ${this.name} and studetns is ${this.students.join(",")}`);
+  },
+};
+
+classroom.attendance();
+
+const lab = {
+  name: "Farid mia",
+  students: ["josim", "mithu", "jodu"],
+  attendance: function () {
+    console.log(`name ${this.name} and studetns is ${this.students.join(",")}`);
+  },
+};
+
+let labind = classroom.attendance.bind(lab);
+
+labind();
