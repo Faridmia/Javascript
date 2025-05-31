@@ -1,5 +1,3 @@
-const { bindKey } = require("lodash");
-
 console.log(this);
 const player = {
   name: "Sakep",

@@ -2,12 +2,54 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>JavaScript Debug Example</title>
   </head>
   <body>
-      <button id="get-user">element that was clicked</button>
+    <h1>Counter App</h1>
+    <p id="counter">0</p>
+    <button id="increaseBtn">Increase</button>
 
-    <script src="this-keyword.js"></script>
+    <script>
+      // Initial counter value
+      let count = 0;
+
+      // Get elements
+      const counterElement = document.getElementById("counter");
+      const button = document.getElementById("increaseBtn");
+
+      // Function to update counter
+      function updateCounter() {
+        count++; // Increase the count by 1
+        console.log("Count updated to:", count); // Log for debugging
+        counterElement.textContent = count; // Show count in UI
+      }
+
+      // Button click event listener
+      button.addEventListener("click", updateCounter);
+    </script>
+
+    <h1>Call Stack Demo</h1>
+    <button onclick="start()">Start Process</button>
+
+    <script>
+      function start() {
+        console.log("Start called");
+        first();
+      }
+
+      function first() {
+        console.log("First called");
+        second();
+      }
+
+      function second() {
+        console.log("Second called");
+        third();
+      }
+
+      function third() {
+        console.log("Third called");
+      }
+    </script>
   </body>
 </html>
