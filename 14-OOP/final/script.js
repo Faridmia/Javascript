@@ -1,6 +1,5 @@
 'use strict';
 
-
 ///////////////////////////////////////
 // Constructor Functions and the new Operator
 const Person = function (firstName, birthYear) {
@@ -40,15 +39,12 @@ const jonas = new Person('Jonas', 1991);
 // console.log(Person.prototype.isPrototypeOf(matilda));
 // console.log(Person.prototype.isPrototypeOf(Person));
 
-
 // Person.hey = function () {
 //   console.log('Hey there 👋');
 //   console.log(this);
 // };
 
-
 // Person.hey();
-
 
 // // .prototyeOfLinkedObjects
 
@@ -57,7 +53,6 @@ const jonas = new Person('Jonas', 1991);
 
 // console.log(jonas.hasOwnProperty('firstName'));
 // console.log(jonas.hasOwnProperty('species'));
-
 
 // Prototypal Inheritance on Built-In Objects
 
@@ -74,32 +69,29 @@ console.log(arr.__proto__ === Array.prototype);
 
 console.log(arr.__proto__.__proto__);
 
+const Car = function (make, speed) {
+  this.make = make;
+  this.speed = speed;
+};
 
-const Car = function ( make, speed ) {
-    this.make = make;
-    this.speed = speed;
-}
+Car.prototype.accelerate = function () {
+  this.speed += 10;
+  console.log(`${this.make} is going at ${this.speed}`);
+};
 
-Car.prototype.accelerate = function() {
-    this.speed += 10;
-    console.log(`${this.make} is going at ${this.speed}`);
-}
-
-Car.prototype.break = function() {
+Car.prototype.break = function () {
   this.speed -= 5;
   console.log(`${this.make} is going at ${this.speed}`);
-}
+};
 
-const bmw = new Car("BMW", 120);
+const bmw = new Car('BMW', 120);
 
-const mercedes = new Car("Mercedes", 95);
+const mercedes = new Car('Mercedes', 95);
 
 bmw.accelerate();
 bmw.accelerate();
 bmw.break();
 bmw.accelerate();
-
-
 
 // ES6 Classes
 
@@ -108,16 +100,14 @@ bmw.accelerate();
 
 // Class declaration
 
-
 class PersonCl2 {
-
-  constructor( fullName, birthYear ) {
+  constructor(fullName, birthYear) {
     this.fullName = fullName;
     this.birthYear = birthYear;
   }
 
   calcAge() {
-    console.log( 2037 - this.birthYear );
+    console.log(2037 - this.birthYear);
   }
 
   get age() {
@@ -125,16 +115,16 @@ class PersonCl2 {
   }
 
   greet() {
-    console.log( `Hey ${this.fullName}`);
+    console.log(`Hey ${this.fullName}`);
   }
 
   set fullName(name) {
-    if(name.includes(" ")) this._fullName = name;
+    if (name.includes(' ')) this._fullName = name;
     else alert(`${name} is not a full name!`);
   }
 
   get fullName() {
-    return this._fullName; 
+    return this._fullName;
   }
 
   static hey() {
@@ -143,11 +133,10 @@ class PersonCl2 {
   }
 }
 
-const jessica = new PersonCl2("Farid Mia", 1997 );
+const jessica = new PersonCl2('Farid Mia', 1997);
 console.log(jessica);
 jessica.calcAge();
-console.log( jessica.age );
-
+console.log(jessica.age);
 
 console.log(jessica.__proto__ === PersonCl2.prototype);
 
@@ -155,7 +144,7 @@ console.log(jessica.__proto__ === PersonCl2.prototype);
 //     console.log(`Hey ${this.firstName}`);
 // };
 
-PersonCl2.prototype.greet = function() {
+PersonCl2.prototype.greet = function () {
   const firstName = this.fullName.split(' ')[0];
   console.log(`Hey ${firstName}`);
 };
@@ -165,12 +154,11 @@ jessica.greet();
 const walter = new PersonCl2('Walter White', 1965);
 PersonCl2.hey(); // static method only class thake e call kora jai but object thake call kora jai na
 
-
 // getter and setter
 
 const account = {
   owner: 'Jonas',
-  movements: [200,300, 120, 300],
+  movements: [200, 300, 120, 300],
 
   get latest() {
     return this.movements.slice(-1).pop();
@@ -178,78 +166,71 @@ const account = {
 
   set latest(mov) {
     this.movements.push(mov);
-  }
-}
+  },
+};
 
-console.log( account.latest );
+console.log(account.latest);
 
 account.latest = 50;
 
 console.log(account.movements);
 
-
-// object create 
+// object create
 
 const PersonProto = {
-
   calcAge() {
-    console.log( 2037 - this.birthYear );
+    console.log(2037 - this.birthYear);
   },
 
-  init( firstName, birthYear ) {
-      this.firstName = firstName;
-      this.birthYear = birthYear;
-  }
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
 };
 
-
 const steven = Object.create(PersonProto); // object thake sorasori prototype chain create korte use hoi
-steven.init("steven",1997);
+steven.init('steven', 1997);
 console.log(steven);
 
-steven.name = "Steven";
+steven.name = 'Steven';
 steven.birthYear = '2002';
-
 
 steven.calcAge();
 
-console.log( steven.__proto__ === PersonProto ); // output true
+console.log(steven.__proto__ === PersonProto); // output true
 
 const sarah = Object.create(PersonProto);
 
-sarah.init("Sarah",1997);
+sarah.init('Sarah', 1997);
 
 console.log(sarah);
 
 sarah.calcAge();
 
-
 class CarCl {
-    constructor( make, speed ) {
-        this.make = make;
-        this.speed = speed;
-    }
+  constructor(make, speed) {
+    this.make = make;
+    this.speed = speed;
+  }
 
-    accelerate() {
-        this.speed += 10;
-        console.log(`${this.make} is going at ${this.speed} km/h`);
-    }
+  accelerate() {
+    this.speed += 10;
+    console.log(`${this.make} is going at ${this.speed} km/h`);
+  }
 
-    brake() {
-      this.speed -= 5;
-      console.log(`${this.make} is going at ${this.speed} km/h`);
-    }
+  brake() {
+    this.speed -= 5;
+    console.log(`${this.make} is going at ${this.speed} km/h`);
+  }
 
-    get speedUS() {
-      return this.speed / 1.6;
-    }
+  get speedUS() {
+    return this.speed / 1.6;
+  }
 
-    set speedUS(speed) {
-        this.speed = this.speed * 1.6;
-    }
-    
+  set speedUS(speed) {
+    this.speed = this.speed * 1.6;
+  }
 }
-
 
 const ford = new CarCl('Ford', 120);
 console.log(ford.speedUS);
@@ -259,30 +240,28 @@ ford.brake();
 ford.speedUS = 50;
 console.log(ford);
 
+const Person2 = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+};
 
-const  Person2 = function( firstName, birthYear ) {
-    this.firstName = firstName;
-    this.birthYear = birthYear;
-}
+Person2.prototype.calcAge = function () {
+  console.log(2037 - this.birthYear);
+};
 
-Person2.prototype.calcAge = function() {
-  console.log( 2037 - this.birthYear );
-}
+// linking prototype
 
-// linking prototype 
-
-const Student = function( firstName, birthYear, course ) {
-    Person2.call( this, firstName, birthYear );
-    this.course = course;
+const Student = function (firstName, birthYear, course) {
+  Person2.call(this, firstName, birthYear);
+  this.course = course;
 };
 
 // Linking prototypes
 Student.prototype = Object.create(Person.prototype);
 
-
-Student.prototype.introduce = function() {
+Student.prototype.introduce = function () {
   console.log(`My name is ${this.firstName} and I study ${this.course}`);
-}
+};
 
 const mike = new Student('Mike', 2020, 'Computer Science');
 mike.introduce();
@@ -298,7 +277,6 @@ console.log(mike instanceof Object);
 Student.prototype.constructor = Student;
 console.dir(Student.prototype.constructor);
 
-
 // Inheritance Between "Classes": ES6 Classes
 
 class PersonCl {
@@ -310,20 +288,20 @@ class PersonCl {
   // instance method
 
   calcAge() {
-    console.log( 2027 - this.birthYear );
+    console.log(2027 - this.birthYear);
   }
 
   greet() {
-      console.log( `Hey this is ${this.firstName}`);
+    console.log(`Hey this is ${this.firstName}`);
   }
 
   get age() {
     return 2037 - this.birthYear;
   }
 
-  set fullName( name ) {
-      if(name.includes(" ")) this._fullName = name;
-      else alert(`${name} is not a full name!`);
+  set fullName(name) {
+    if (name.includes(' ')) this._fullName = name;
+    else alert(`${name} is not a full name!`);
   }
 
   get fullName() {
@@ -333,36 +311,32 @@ class PersonCl {
   static hey() {
     console.log('Hey there 👋');
   }
-  
 }
 
 class StudentCl extends PersonCl {
-    constructor( fullName, birthYear, course ){
-        super( fullName, birthYear);
-        this.course = course;
-    }
+  constructor(fullName, birthYear, course) {
+    super(fullName, birthYear);
+    this.course = course;
+  }
 
-    introduce() {
-      console.log(`My name is ${this.fullName} and I study ${this.course}`);
-    }
+  introduce() {
+    console.log(`My name is ${this.fullName} and I study ${this.course}`);
+  }
 
-    calcAge() {
-      console.log(
-        `I'm ${
-          2037 - this.birthYear
-        } years old, but as a student I feel more like ${
-          2037 - this.birthYear + 10
-        }`
-      );
-    }
+  calcAge() {
+    console.log(
+      `I'm ${
+        2037 - this.birthYear
+      } years old, but as a student I feel more like ${
+        2037 - this.birthYear + 10
+      }`,
+    );
+  }
 }
 
 const martha = new StudentCl('Martha Jones', 2012, 'Computer Science');
 martha.introduce();
 martha.calcAge();
-
-
-
 
 const PersonProtoUpdate = {
   calcAge() {
@@ -386,7 +360,7 @@ StudentProto.init = function (firstName, birthYear, course) {
 StudentProto.introduce = function () {
   // BUG in video:
   // console.log(`My name is ${this.fullName} and I study ${this.course}`);
-  
+
   // FIX:
   console.log(`My name is ${this.firstName} and I study ${this.course}`);
 };
@@ -394,41 +368,65 @@ StudentProto.introduce = function () {
 const jay = Object.create(StudentProto);
 jay.init('Jay', 2010, 'Computer Science');
 jay.introduce();
-jay.calcAge();  
-
+jay.calcAge();
 
 const PersonProto2 = {
-
   calcAge() {
-      console.log( 2037 - this.birthYear );
+    console.log(2037 - this.birthYear);
   },
 
-  init( firstName, birthYear ) {
-      this.birthYear = birthYear;
-      this.firstName = firstName;
-  }
-}
+  init(firstName, birthYear) {
+    this.birthYear = birthYear;
+    this.firstName = firstName;
+  },
+};
 
 const personobj22 = Object.create(PersonProto2);
 
 const StudentProto2 = Object.create(PersonProto2);
 
-StudentProto2.init = function( firstName, birthYear, course ) {
-  personobj22.init.call( this, firstName, birthYear );
+StudentProto2.init = function (firstName, birthYear, course) {
+  personobj22.init.call(this, firstName, birthYear);
 
   this.course = course;
-}
+};
 
-
-StudentProto2.introduce = function() {
-
+StudentProto2.introduce = function () {
   console.log(`my name is ${this.firstName} and I am study ${this.course}`);
-}
-
+};
 
 const jay2 = Object.create(StudentProto2);
 
-jay2.init("jay", 2025, "Computer Science");
+jay2.init('jay', 2025, 'Computer Science');
 
 jay2.introduce();
 jay2.calcAge();
+
+/**
+ * @param {number[]} nums
+ * @return {void}
+ */
+var ArrayWrapper = function (nums) {
+  this.nums = nums;
+};
+
+/**
+ * @return {number}
+ */
+ArrayWrapper.prototype.valueOf = function () {
+  return this.nums.reduce((sum, num) => sum + num, 0);
+};
+
+/**
+ * @return {string}
+ */
+ArrayWrapper.prototype.toString = function () {
+  return `[${this.nums.join(',')}]`;
+};
+
+const obj1 = new ArrayWrapper([1, 2]);
+const obj2 = new ArrayWrapper([3, 4]);
+
+console.log(obj1 + obj2);
+console.log(String(obj1));
+console.log(String(obj2));
