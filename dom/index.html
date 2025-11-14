@@ -12,6 +12,21 @@
     <button id="addBtn">Add</button>
     <ul id="taskList"></ul>
 
+
+    <img src="img1.jpg" class="thumb">
+    <img src="img2.jpg" class="thumb">
+    <div id="lightbox" style="display:none;">
+        <img id="lightbox-img" src="">
+    </div>
+
+
+    <div class="box-text-count">
+        <textarea id="message" placeholder="Type something..."></textarea>
+        <p>Characters: <span id="count">0</span></p>
+    </div>
+
+
+
     <script>
 
         let taskInput = document.getElementById('taskInput');
@@ -24,7 +39,33 @@
             li.textContent = taskInput.value;
             taskList.appendChild(li);
             taskInput.value = '';
-        })
+        });
+
+
+        const thumbs = document.querySelectorAll('.thumb');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        thumbs.forEach(img => {
+            img.addEventListener('click', () => {
+            lightboxImg.src = img.src;
+            lightbox.style.display = 'block';
+            });
+        });
+
+        lightbox.addEventListener('click', () => lightbox.style.display = 'none');
+
+
+
+        // count text typing....
+
+        let messageBox = document.getElementById("message");
+
+        let countText = document.getElementById("count");
+
+        messageBox.addEventListener("input",() => {
+            countText.textContent = messageBox.value.length;
+        });
 
     </script>
 </body>
