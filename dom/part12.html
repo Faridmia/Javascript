@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h2>Title</h2>
+        <p class="note">This is a note</p>
+        <button>Click</button>
+    </div>
+
+    <script>
+        let note = document.querySelector('.note');
+
+        console.log("Parent:", note.parentNode);
+       console.log("next elementsibling...", note.nextElementSibling);
+       console.log("previous elementsibling...", note.previousElementSibling);
+    </script>
+</body>
+</html>
