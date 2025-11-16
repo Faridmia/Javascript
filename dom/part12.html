@@ -12,12 +12,53 @@
         <button>Click</button>
     </div>
 
-    <script>
-        let note = document.querySelector('.note');
+    <div id="root">
+        <section>
+            <div class="box">
+                <p>Text1</p>
+                <p>Text2</p>
+            </div>
+            <article>
+                <span>Example</span>
+            </article>
+        </section>
+        <ul id="menu">
+            <li>Home</li>
+            <li>Products</li>
+            <li class="current">Customer Support</li>
+            <li>Careers</li>
+            <li>Investors</li>
+            <li>News</li>
+            <li>About Us</li>
+        </ul>
 
-        console.log("Parent:", note.parentNode);
-       console.log("next elementsibling...", note.nextElementSibling);
-       console.log("previous elementsibling...", note.previousElementSibling);
+    </div>
+
+
+    <script>
+    //     let note = document.querySelector('.note');
+
+    //     console.log("Parent:", note.parentNode);
+    //    console.log("next elementsibling...", note.nextElementSibling);
+    //    console.log("previous elementsibling...", note.previousElementSibling);
+
+       let current = document.querySelector('.current');
+
+       let nextsiblingEle = current.nextElementSibling;
+
+        // while( nextsiblingEle ) {
+        //     console.log( "next elements siblings...", nextsiblingEle );
+        //         nextsiblingEle = nextsiblingEle.nextElementSibling;
+        // }
+
+        // let prevSibling = current.previousElementSibling;
+        // while(prevSibling) {
+        //     console.log(prevSibling);
+        //     prevSibling = prevSibling.previousElementSibling;
+        // }
+
+      
+
     </script>
 </body>
 </html>
