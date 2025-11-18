@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul id="first-list">
+        <li>Everest</li>
+    </ul>
+
+    <ul id="second-list">
+        <li>Denali</li>
+    </ul>
+
+
+    <script>
+
+        let firstList = document.querySelector("#first-list");
+        let secondList = document.querySelector("#second-list");
+        const everEast = firstList.firstElementChild;
+
+        secondList.appendChild( everEast );
+
+        console.log( everEast );
+    </script>
+
+</body>
+</html>
