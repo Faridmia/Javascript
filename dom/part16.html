@@ -15,7 +15,18 @@
         <li>Denali</li>
     </ul>
 
+    <div id="note">
+        JavaScript textContent Demo!
+        <span style="display:none">Hidden Text!</span>
+        <!-- my comment -->
+    </div> 
 
+    <div class="container"></div>
+
+    <ul id="language"></ul>
+
+    
+    
     <script>
 
         let firstList = document.querySelector("#first-list");
@@ -25,6 +36,43 @@
         secondList.appendChild( everEast );
 
         console.log( everEast );
+
+        let note = document.getElementById('note');
+
+        console.log(note.textContent);
+
+
+        let div = document.querySelector('.container');
+
+        let fragment = document.createDocumentFragment();
+
+        for (let i = 0; i < 1000; i++) {
+            let p = document.createElement('p');
+            p.textContent = `Paragraph ${i}`;
+            fragment.appendChild(p);
+        }
+
+        div.appendChild(fragment);
+
+
+        let languages = ['JS', 'TypeScript', 'Elm', 'Dart','Scala'];
+
+        let langEl = document.querySelector('#language');
+
+        let fragment2 = new DocumentFragment();
+
+        languages.forEach( ( language ) => {
+            let li1 = document.createElement("li");
+
+            li1.innerHTML = language;
+
+            fragment2.appendChild( li1 );
+        });
+
+        langEl.appendChild(fragment2);
+
+
+
     </script>
 
 </body>
