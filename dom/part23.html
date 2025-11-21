@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="username" tabindex="1" value="guest">
+    <input type="checkbox" id="chkAccept" checked> Accept
+    <input type="password" id="password" style="color:red;with:100%">
+    
+
+    <script>
+        let input = document.querySelector('#username');
+
+        // attribute -> property: OK
+        input.setAttribute('value','guest');
+        console.log(input.value);  // guest
+
+
+        // property -> attribute: doesn't change
+        input.value = 'admin';
+        console.log(input.getAttribute('value')); // guest
+
+        let checkbox = document.querySelector('#chkAccept');
+        console.log(checkbox.checked); // true
+
+        let input2 = document.querySelector('#password');
+
+        let styleAttr = input2.getAttribute('style');
+        console.log(styleAttr);
+
+        console.dir(input.style);
+
+
+    </script>
+</body>
+</html>
