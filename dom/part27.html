@@ -1,0 +1,46 @@
+<!-- file: beforeunload-demo.html -->
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <title>beforeunload Demo</title>
+  <style>textarea{width:100%;height:150px}</style>
+</head>
+<body>
+  <h2>beforeunload উদাহরণ — Unsaved changes warning</h2>
+
+  <form id="noteForm">
+    <label>Note লিখো (edit করলে page ছাড়ার সময়ে সতর্ক করা হবে):</label><br/>
+    <textarea id="note"></textarea><br/>
+    <button type="button" id="saveBtn">Save (simulate)</button>
+  </form>
+
+  <script>
+    const textarea = document.getElementById('note');
+    const saveBtn = document.getElementById('saveBtn');
+
+    let isDirty = false;
+
+    textarea.addEventListener('input', () => { 
+        isDirty = true; 
+    });
+
+    saveBtn.addEventListener('click', () => {
+      // simulate save
+      isDirty = false;
+      alert('Saved (simulation)');
+    });
+
+    console.log(isDirty)
+
+    window.addEventListener('beforeunload', function (event) {
+      if (!isDirty) return;
+      
+      event.preventDefault();
+     
+      event.returnValue = '';
+      console.log('beforeunload triggered — user has unsaved changes');
+    });
+  </script>
+</body>
+</html>
