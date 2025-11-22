@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS DOMContentLoaded Event</title>
+        <script>
+            function handleReady() {
+                console.log('DOM ready');
+            }
+
+            if (document.readyState === 'loading') {
+                console.log('The document is loading...');
+                document.addEventListener('DOMContentLoaded', handleReady);
+            } else {
+                console.log('The document has been loaded.');
+                handleReady();
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
