@@ -23,6 +23,8 @@
         <p>Click the links above to change the content.</p>
     </main>
 
+    <button class="btn">Test</button>
+
     <script>
         const pwd = document.querySelector('input[type="password"]');
 
@@ -64,6 +66,14 @@
             // Event listener for hashchange
             window.addEventListener('hashchange', updateContent);
 
+            let btn = document.querySelector('.btn');
+
+            btn.addEventListener('click', function () {
+                    alert('Mouse Clicked');
+            });
+
+            let clickEvent = new Event('click');
+            btn.dispatchEvent(clickEvent);
 
 
     </script>
